@@ -1,3 +1,8 @@
+const rockBtn = document.querySelector('.rock-btn');
+const paperBtn = document.querySelector('.paper-btn');
+const scissorsBtn = document.querySelector('.scissors-btn');
+
+// Possible choices
 const choices = ["rock", "paper", "scissors"];
 
 // Computer choice
@@ -12,7 +17,8 @@ function printScore() {
     console.log('Computer Score: ' + computerScore);
 }
 
-function playRound(playerSelection, computerSelection) {
+// Play a round
+function playRound(playerSelection, computerSelection = getComputerChoice()) {
     console.log('Player 😃: ' + playerSelection);
     console.log('Computer 🤖: ' + computerSelection);
 
@@ -42,22 +48,13 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-        // Player choice
-        const playerChoice = prompt('Rock, paper, or scissors? ').toLowerCase();
-        console.log(playRound(playerChoice, getComputerChoice()));
-
-        printScore();
-    }
-
-    if (playerScore > computerScore) {
-        console.log(`You win! You beat the computer by ${playerScore - computerScore} point(s)!`);
-    } else if (computerScore > playerScore) {
-        console.log(`You lost! The computer beat you by ${computerScore - playerScore} point(s)!`);
-    } else if (playerScore === computerScore) {
-        console.log(`It's a tie! Both you and the computer got ${playerScore} point(s)!`);
-    }
-}
-
-playGame();
+// Button event listeners
+rockBtn.addEventListener('click', () => {
+    console.log(playRound('rock'));
+});
+paperBtn.addEventListener('click', () => {
+    console.log(playRound('paper'));
+});
+scissorsBtn.addEventListener('click', () => {
+    console.log(playRound('scissors'));
+});
