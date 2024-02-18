@@ -31,8 +31,8 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
         playerSelection === 'paper' && computerSelection === 'rock'
     ) {
         playerScore++;
-        return `You win! ${playerSelection} beats ${computerSelection}!`;
-        
+        updateScore();
+        resultText.textContent = 'You win!';
     }
 
     // Lose conditions
@@ -42,23 +42,23 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
         computerSelection === 'paper' && playerSelection  === 'rock'
     ) {
         computerScore++;
-        return `You lose! ${computerSelection} beats ${playerSelection}!`;
+        updateScore();
+        resultText.textContent = 'You lose!';
     }
     
     // Tie condition
     if (playerSelection === computerSelection) {
-        return `It's a tie! You both chose ${playerSelection}!`;
+        resultText.textContent = 'It\'s a tie!';
     }
 }
 
 // Button event listeners
 rockBtn.addEventListener('click', () => {
-    resultText.textContent = playRound('rock');
+    playRound('rock');
 });
 paperBtn.addEventListener('click', () => {
-    console.log(playRound('paper'));
-    resultText.textContent = playRound('paper');
+    playRound('paper');
 });
 scissorsBtn.addEventListener('click', () => {
-    resultText.textContent = playRound('scissors');
+    playRound('scissors');
 });
