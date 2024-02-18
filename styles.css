@@ -88,10 +88,22 @@ footer {
 
 .top-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
     padding: 25px;
     font-size: 24px;
     font-weight: 500;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    transition: 0.09s;
+}
+
+.icon:hover {
+    cursor: pointer;
+    transform:scale(1.1);
 }
 
 footer {
