@@ -16,16 +16,67 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     min-height: 100vh;
     height: 100%;
     background: var(--dark-background);
     color: white;
     font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 50px;
+    background: var(--dark-foreground);
+    border: none;
+    outline: none;
+    font-size: 32px;
+    border-radius: 10px;
+}
+
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    gap: 20px;
+    min-width: 500px;
+    min-height: 300px;
+    padding: 30px;
+    background: var(--dark-foreground);
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.result-container > h1 {
+    font-size: 52px;
+}
+
+.computer-choice {
+    font-size: 24px;
+}
+
+.score-container {
+    display: flex;
+    justify-content: space-around;
+    font-size: 24px;
 }
 
 .top-container,
 footer {
     background: var(--dark-foreground);
+    width: 100%;
 }
 
 .top-container {
