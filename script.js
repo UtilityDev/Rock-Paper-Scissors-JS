@@ -2,6 +2,9 @@ const rockBtn = document.querySelector('.rock-btn');
 const paperBtn = document.querySelector('.paper-btn');
 const scissorsBtn = document.querySelector('.scissors-btn');
 
+const resultText = document.querySelector('.result-text');
+const computerChoiceText = document.querySelector('.computer-choice');
+
 // Possible choices
 const choices = ["rock", "paper", "scissors"];
 
@@ -19,8 +22,7 @@ function printScore() {
 
 // Play a round
 function playRound(playerSelection, computerSelection = getComputerChoice()) {
-    console.log('Player 😃: ' + playerSelection);
-    console.log('Computer 🤖: ' + computerSelection);
+    computerChoiceText.textContent = `🤖: ${computerSelection}`;
 
     // Win conditions
     if (
@@ -50,11 +52,12 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
 
 // Button event listeners
 rockBtn.addEventListener('click', () => {
-    console.log(playRound('rock'));
+    resultText.textContent = playRound('rock');
 });
 paperBtn.addEventListener('click', () => {
     console.log(playRound('paper'));
+    resultText.textContent = playRound('paper');
 });
 scissorsBtn.addEventListener('click', () => {
-    console.log(playRound('scissors'));
+    resultText.textContent = playRound('scissors');
 });
