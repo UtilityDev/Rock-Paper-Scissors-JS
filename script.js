@@ -15,9 +15,9 @@ let playerScore = 0;
 let computerScore = 0;
 
 // Get score
-function printScore() {
-    console.log('Player Score: ' + playerScore);
-    console.log('Computer Score: ' + computerScore);
+function updateScore() {
+    document.getElementById('player-score').textContent = "You: " + playerScore.toString();
+    document.getElementById('computer-score').textContent = "Computer: " + computerScore.toString();
 }
 
 // Play a round
@@ -32,6 +32,7 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
     ) {
         playerScore++;
         return `You win! ${playerSelection} beats ${computerSelection}!`;
+        
     }
 
     // Lose conditions
